@@ -9,6 +9,13 @@ def read_events():
         "items": [{"id": 1}, {"id": 2}, {"id": 3}]
     }
 
+@router.post("/")
+def create_event(data:dict = {}) -> EventSchema:
+    print(type(data))
+    return {
+        "id": 123
+    }
+
 @router.get("/{event_id}")
 def read_events(event_id: int) -> EventSchema:
     return {
